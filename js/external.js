@@ -44,7 +44,7 @@ var password = 'notastrongpassword';
 
 var password_is_five_characters = password.length >= 5;
 var username_not_in_password = !password.includes(username);
-var username_less_than_twenty_chars = username.length < 20;
+var username_less_than_twenty_chars = username.length <= 20;
 var no_whitespace = password === password.trim() && username === username.trim();
 
 console.log(password_is_five_characters);
