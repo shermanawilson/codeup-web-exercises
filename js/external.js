@@ -37,3 +37,17 @@ var premium = confirm("Are you a premium member");
 var quantity = Number(prompt("How many items did you buy"));
 var expired = confirm("Is the coupon expired");
 alert("You can get the discount" + ((!expired) && (premium || (quantity > 2))));
+
+// 4
+var username = 'codeup';
+var password = 'notastrongpassword';
+
+var password_is_five_characters = password.length >= 5;
+var username_not_in_password = !password.includes(username);
+var username_less_than_twenty_chars = username.length < 20;
+var no_whitespace = password === password.trim() && username === username.trim();
+
+console.log(password_is_five_characters);
+console.log(username_not_in_password);
+console.log(username_less_than_twenty_chars);
+console.log(no_whitespace);

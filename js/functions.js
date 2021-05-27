@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    return "Hello, " + name;
+    return "Hello, " + name + "!";
 }
 
 /**
@@ -25,12 +25,13 @@ var helloMessage = sayHello("Sherma'n");
 console.log(helloMessage);
 
 /**
- * TODO:
+ *
  * Store your name as a string in a variable named 'myName', and pass that
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-
+var myName = "Sherma'n";
+console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
@@ -53,6 +54,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
+function isTwo(number) {
+    return ;
+}
+
+console.log()
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -64,7 +70,10 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-
+function calculateTip(num1, num2) {
+    return num1 + num2; ;
+}
+console.log(calculateTip(.20, 43.57).toFixed(2));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -86,3 +95,7 @@ var random = Math.floor((Math.random() * 3) + 1);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
+function applyDiscount(num1, num2) {
+    return num1 - (num2 * num1);
+}
+console.log("Final TODO result $" + (applyDiscount(45.99, 0.12)));
