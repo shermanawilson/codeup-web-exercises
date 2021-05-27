@@ -33,6 +33,7 @@ var confilct = confirm("Is there a conflict?");
 alert("You can enroll in class:" + (full && !confilct));
 
 // 3.d
-var premium = confirm("Are you a premium member?");
-var expoDate = confirm("Is it expiered?");
-alert("Product off can be applied:" + (itemsBought && expoDate));
+var premium = confirm("Are you a premium member");
+var quantity = Number(prompt("How many items did you buy"));
+var expired = confirm("Is the coupon expired");
+alert("You can get the discount" + ((!expired) && (premium || (quantity > 2))));
