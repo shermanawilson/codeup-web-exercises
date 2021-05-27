@@ -19,8 +19,8 @@ var hercules = 1;
 var totalCost;
 
 totalCost = ((littleMermaid * 3) + (brotherBear * 3) + (hercules * 3));
-console.log(totalCost);
-alert("The price for the movie is: " + totalCost); */
+console.log(totalCost); */
+alert("The price for the movie is: " + ((3+5+1) * 3));
 
 // 3.b
 
@@ -33,3 +33,6 @@ var confilct = confirm("Is there a conflict?");
 alert("You can enroll in class:" + (full && !confilct));
 
 // 3.d
+var premium = confirm("Are you a premium member?");
+var expoDate = confirm("Is it expiered?");
+alert("Product off can be applied:" + (itemsBought && expoDate));
