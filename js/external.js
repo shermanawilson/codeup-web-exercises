@@ -1,13 +1,18 @@
 "use strict";
 
 
-console.log("Hello World");
-console.log("Hellow Polaris");
+console.log("Hello from External JavaScript");
 
-alert("Hey Girl Hey");
 
-var confirmed = confirm("Do you want icecream?");
-console.log(confirmed);
+alert("Welcome to my website");
 
-var userInput = prompt('Please type something:');
-console.log('The user entered: ' + userInput);
+var favColor = confirm("What is your favorite color?");
+console.log(favColor);
+
+var favoriteColor = prompt("What is your favorite color?");
+if(favoriteColor == "blue") {
+    console.log("That's my favorite color too!");
+} else {
+    console.log("That's okay!")
+}
+console.log('The user entered: ' + favoriteColor);
