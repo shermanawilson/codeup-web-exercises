@@ -37,7 +37,7 @@ console.log(sayHello(myName));
 var random = Math.floor((Math.random() * 3) + 1);
 
 /**
- * TODO:
+ *
  * Create a function called 'isTwo' that takes a number as a parameter.
  * The function should return a boolean value based on whether or not the passed
  * number is the number 2.
@@ -54,9 +54,8 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(random) {
+function isTwo(value) {
     var result;
-    var value = random;
     if(value === 2) {
         result = true;
     } else {
@@ -87,7 +86,9 @@ console.log(calculateTip(.15, 25.00).toFixed(2));
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-
+/*var userInput = prompt('Please type something:');
+console.log('The user entered: ' + userInput);
+alert("You should tip: "); */
 /**
  *
  * Create a function named `applyDiscount`. This function should accept a price
