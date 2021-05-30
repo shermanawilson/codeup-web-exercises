@@ -54,13 +54,20 @@ var random = Math.floor((Math.random() * 3) + 1);
  * number)
  */
 
-function isTwo(number) {
-    return ;
+function isTwo(random) {
+    var result;
+    var value = random;
+    if(value === 2) {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result;
 }
-
-console.log()
+console.log(random);
+console.log(isTwo(random));
 /**
- * TODO:
+ *
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
  * restaurant. The function should accept a tip percentage and the total of the
  * bill, and return the amount to tip
@@ -71,9 +78,9 @@ console.log()
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(num1, num2) {
-    return num1 + num2; ;
+    return num1 * num2;
 }
-console.log(calculateTip(.20, 43.57).toFixed(2));
+console.log(calculateTip(.15, 25.00).toFixed(2));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -82,7 +89,7 @@ console.log(calculateTip(.20, 43.57).toFixed(2));
  */
 
 /**
- * TODO:
+ *
  * Create a function named `applyDiscount`. This function should accept a price
  * (before a discount is applied), and a discount percentage (a number between 0
  * and 1). It should return the result of applying the discount to the original
@@ -98,4 +105,4 @@ console.log(calculateTip(.20, 43.57).toFixed(2));
 function applyDiscount(num1, num2) {
     return num1 - (num2 * num1);
 }
-console.log("Final TODO result $" + (applyDiscount(45.99, 0.12)));
+console.log("Final TODO result: $" + (applyDiscount(10, 0.10)));
