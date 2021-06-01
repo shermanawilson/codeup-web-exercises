@@ -148,10 +148,11 @@ console.log("Your total is: $" + calculateTotal(5, 100));
 // Generate a random number between 0 and 6
  var luckyNumber = Math.floor(Math.random() * 6);
 
-var totalBill = prompt("What is your total bill:")
-alert("Your price before discount is: $" + totalBill);
-alert("Your total bill is: $" + calculateTotal(luckyNumber, totalBill));
+var totalBill = prompt("What is your total bill:");
 alert("Your lucky number is " + luckyNumber);
+alert("Your price before discount is: $" + totalBill);
+alert("Your total bill is: $" + (calculateTotal(luckyNumber, totalBill))
+);
 
 /**
  * TODO:
@@ -170,14 +171,21 @@ alert("Your lucky number is " + luckyNumber);
  * HINT: The way we prompt for a value could be improved
  */
 var enterNumber = confirm("Would you like to enter a number?");
-if(enterNumber) {
+if(enterNumber === NaN) {
+    alert(NaN);
     var newNumber = prompt("Enter a number");
-   // prompt("Enter a number");
-    alert(newNumber + 100);
-    if((newNumber % 2) === 0) {
+} else if(newNumber)
+    // prompt("Enter a number");
+    alert("Your lucky number plus 100 is: " + (Number(newNumber) + 100));
+    if ((newNumber % 2) === 0) {
         alert("Your lucky number is even");
     } else {
         alert("Your lucky number is odd");
+        if (newNumber >= 0) {
+            alert("Your lucky number is positve");
+        } else {
+            alert("Your lucky number is negative");
+        }
     }
 }
 
