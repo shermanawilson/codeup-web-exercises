@@ -85,7 +85,7 @@ function calculateTip(num1, num2) {
 console.log(calculateTip(.15, 25.00).toFixed(2));
 
 /**
- * TODO:
+ *
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
