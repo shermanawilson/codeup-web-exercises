@@ -27,6 +27,7 @@ do {
         totalSold = totalSold + conesBought;
         console.log("Ive sold " + totalSold + " cones!");
 } while(totalSold < totalCanSell);
+console.log("Yay! I've sold them all!");
 
 
 
