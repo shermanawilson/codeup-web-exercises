@@ -35,6 +35,12 @@ for (let num = 1; num <= 9; num++) {
     console.log(number.toString());
 }
 
+// Another way to do number 4
+
+for (var index = 1,number = ""; index < 10; index++) {
+    number += "1";
+    console.log(index * number)
+}
 // #5
 
  for (let index = 100; index >= 5; index = (index - 5)) {
