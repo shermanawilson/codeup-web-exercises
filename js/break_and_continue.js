@@ -7,13 +7,11 @@
  //         break;
  //     }
  // }
-//var indexFinder = Math.ceil(Math.random() * (50 - 1) + 1);
-
 //addNumber = prompt("What number do you have?");
 
 addNumber = prompt("What is your number?");
+//console.log("Number to skip is " + index);
 for (var index = 0; index < 50; index++) {
-
     //if(index == index % 2 == 0) {
     if(index === Number(addNumber)) {
         //prompt("What is your number: " + addNumber)
