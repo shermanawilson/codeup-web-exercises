@@ -11,7 +11,7 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-    var person = {};
+    let person = {};
 
     person = {
         firstName: "Shy",
@@ -47,7 +47,7 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
+    let shoppers = [
         {
             name: 'Cameron',
             amount: 180
@@ -61,18 +61,20 @@
             amount: 320
         }
     ];
-    var amount_before_discount = shoppers.amount;
-    var discount = 0.12;
-    var amount_saved = (amount_before_discount * discount);
-    var amount_after_discount = (amount_before_discount - amount_saved);
+    let amount_before_discount = shoppers.amount;
+    let discount = 0.12;
+    let amount_saved = (amount_before_discount * discount);
+    let amount_after_discount = (amount_before_discount - amount_saved);
+
+    shoppers.forEach(function(shoppers) {
 
         if (amount_before_discount <= 200) {
-            return "Sorry, "  + shoppers.name + ". No discount for you!" + "Your total is: $" + amount_before_discount;
+            console.log("Sorry, " + shoppers.name + ". No discount for you!" + "Your total is: $" + amount_before_discount);
         }
         if (amount_before_discount >= 200) {
-            return "Great news " + shoppers.name + "! You qualify for a 12% discount! Your total after discount is: $" + amount_after_discount;
+            console.log("Great news " + shoppers.name + "! You qualify for a 12% discount! Your total after discount is: $" + amount_after_discount);
         }
-
+    });
     /**
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -85,7 +87,7 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    var books = [{
+    let books = [{
         title: "An Unapologetic Cookbook",
         author: {
             firstName: "Joshua",
@@ -149,7 +151,7 @@
      *      ...
      */
 
-for (var index = 0; index < books.length; index++) {
+for (let index = 0; index < books.length; index++) {
     console.log("Book # " + index);
     console.log("Title: " + books[index].title);
     console.log("Author: " + books[index].author.firstName + " " + books[index].author.lastName);
@@ -166,7 +168,7 @@ console.log();
      *   `showBookInfo` function.
      */
     books.creatBook = function () {
-       var newEntry = prompt("Please enter Title and Author Name");
+      // let newEntry = prompt("Please enter Title and Author Name");
     }
 
 })();
