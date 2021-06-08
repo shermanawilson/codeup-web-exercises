@@ -2,7 +2,7 @@
     "use strict";
 
     /**
-     * TODO:
+     *
      * Create an object with firstName and lastName properties that are strings
      * with your first and last name. Store this object in a variable named
      * `person`.
@@ -11,9 +11,17 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    var person = {};
 
+    person = {
+        firstName: "Shy",
+        lastName: "Hall"
+    }
+    console.log(person);
+    console.log(person.firstName);
+    console.log(person.lastName);
     /**
-     * TODO:
+     *
      * Add a sayHello method to the person object that returns a greeting using
      * the firstName and lastName properties.
      * console.log the returned message to check your work
@@ -21,7 +29,10 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
+    person.sayHello = function() {
+        return "Hello from " + person.firstName + " " + person.lastName + "!";
+    }
+    console.log(person.sayHello());
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
@@ -36,12 +47,32 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {
+            name: 'Cameron',
+            amount: 180
+        },
+        {
+            name: 'Ryan',
+            amount: 250
+        },
+        {
+            name: 'George',
+            amount: 320
+        }
+    ];
+    var amount_before_discount = shoppers.amount;
+    var discount = 0.12;
+    var amount_saved = (amount_before_discount * discount);
+    var amount_after_discount = (amount_before_discount - amount_saved);
 
+        if (amount_before_discount < 200) {
+            return "Sorry, "  + shoppers.name + ". No discount for you!" + "Your total is: $" + amount_before_discount;
+        }
+        if (amount_before_discount > 200) {
+            return "Great news " + shoppers.name + "! You qualify for a 12% discount! Your total after discount is: $" + amount_after_discount;
+        }
+console.log();
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
