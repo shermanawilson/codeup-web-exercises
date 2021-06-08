@@ -66,14 +66,14 @@
     var amount_saved = (amount_before_discount * discount);
     var amount_after_discount = (amount_before_discount - amount_saved);
 
-        if (amount_before_discount < 200) {
+        if (amount_before_discount <= 200) {
             return "Sorry, "  + shoppers.name + ". No discount for you!" + "Your total is: $" + amount_before_discount;
         }
-        if (amount_before_discount > 200) {
+        if (amount_before_discount >= 200) {
             return "Great news " + shoppers.name + "! You qualify for a 12% discount! Your total after discount is: $" + amount_after_discount;
         }
-console.log();
-    /** TODO:
+
+    /**
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
      * property. The author property should be an object with properties
@@ -85,9 +85,47 @@ console.log();
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+    var books = [{
+        title: "An Unapologetic Cookbook",
+        author: {
+            firstName: "Joshua",
+            lastName: "Weissman"
+        }
+    },
+        {
+        title: "Oh, the Places You'll Go!",
+        author: {
+            firstName: "Dr.",
+            lastName: "Seuss"
+        }
+        },
+        {
+            title: "The Last Thing He Told Me: A Novel",
+            author: {
+                firstName: "Laura",
+                lastName: "Dave"
+            }
+        },
+        {
+            title: "The President's Daughter: A Thriller",
+            author: {
+                firstName: "James",
+                lastName: "Patterson"
+            }
+        },
+        {
+            title: "American Marxism",
+            author: {
+                firstName: "Mark",
+                lastName: "Levin"
+            }
+        }
+    ];
+    console.log(books[0].title);
+    console.log(books[2].author.firstName);
+    console.log(books[4].author.lastName);
     /**
-     * TODO:
+     *
      * Loop through the books array and output the following information about
      * each book:
      * - the book number (use the index of the book in the array)
@@ -111,6 +149,12 @@ console.log();
      *      ...
      */
 
+for (var index = 0; index < books.length; index++) {
+    console.log("Book # " + index);
+    console.log("Title: " + books[index].title);
+    console.log("Author: " + books[index].author.firstName + " " + books[index].author.lastName);
+}
+console.log();
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -121,5 +165,8 @@ console.log();
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    books.creatBook = function () {
+       var newEntry = prompt("Please enter Title and Author Name");
+    }
 
 })();
