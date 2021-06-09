@@ -33,7 +33,7 @@
         return "Hello from " + person.firstName + " " + person.lastName + "!";
     }
     console.log(person.sayHello());
-    /** TODO:
+    /**
      * HEB has an offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
      * discount. Write a JS program, using conditionals, that logs to the
@@ -61,18 +61,19 @@
             amount: 320
         }
     ];
-    let amount_before_discount = shoppers.amount;
-    let discount = 0.12;
-    let amount_saved = (amount_before_discount * discount);
-    let amount_after_discount = (amount_before_discount - amount_saved);
 
-    shoppers.forEach(function(shoppers) {
+
+    shoppers.forEach(function(shopper) {
+        let amount_before_discount = shopper.amount;
+        let discount = 0.12;
+        let amount_saved = (amount_before_discount * discount);
+        let amount_after_discount = (amount_before_discount - amount_saved);
 
         if (amount_before_discount <= 200) {
-            console.log("Sorry, " + shoppers.name + ". No discount for you!" + "Your total is: $" + amount_before_discount);
+            console.log("Sorry, " + shopper.name + ". No discount for you! Your total before your discount was: $" + amount_before_discount + " Your total after discount is: $" + amount_before_discount);
         }
         if (amount_before_discount >= 200) {
-            console.log("Great news " + shoppers.name + "! You qualify for a 12% discount! Your total after discount is: $" + amount_after_discount);
+            console.log("Great news " + shopper.name + "! You qualify for a 12% discount! Your total before your discount was: $" + amount_before_discount + ". Your total after discount is: $" + amount_after_discount);
         }
     });
     /**
@@ -167,8 +168,26 @@ console.log();
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    books.creatBook = function () {
-      // let newEntry = prompt("Please enter Title and Author Name");
+    function createBook(title, author) {
+        var name = author.split(" ");
+        console.log(name[0]);
+        console.log(name[1]);
+        let firstName = name[0];
+        let lastName = name[1];
+        return {
+            title : title,
+            author : {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
     }
+ console.log(createBook("Oh, the Places You'll Go!", "Dr. Seuss"));
 
+    function showBookInfo(books, index) {
+        console.log("Book # " + index);
+        console.log("Title: " + books[index].title);
+        console.log("Author: " + books[index].author.firstName + " " + books[index].author.lastName)
+    }
+    console.log(showBookInfo(books[0]));
 })();
