@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Forms</title>
+  </head>
+  <body>
+  <form method="POST" action="https://request-inspector.glitch.me/">
+
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text">
+    <br>
+
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+    <br>
+
+    <input type="submit">
+  </form>
+  <HR>
+  <form action="https://request-inspector.glitch.me" method="GET">
+    <label for="zipcode">Zipcode</label>
+    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">
+    <button type="submit">Search</button>
+  </form>
+  <div>
+  <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter
+  <br>
+  A <input type="radio" name="quiz_question_1" value="a"><br>
+  B <input type="radio" name="quiz_question_1" value="b"><br>
+  C <input type="radio" name="quiz_question_1" value="c"><br>
+  D <input type="radio" name="quiz_question_1" value="d"><br>
+  <input type="submit">
+  </div>
+<br>
+  <select name="coffee_preference">
+    <option value="light">Light Roast</option>
+    <option value="dark">Dark Roast</option>
+    <option value="espresso">Espresso Blend</option>
+  </select>
+
+  <form>
+    <input name="the_answer" value="42">
+    <button type="submit">Search</button>
+  </form>
+
+  <input type="text" name="username" value="codeup" disabled>
+
+  <select name="newsletter_signup">
+    <option disabled value="n">No</option>
+    <option selected value="y">Yes</option>
+  </select>
+
+  </body>
+</html>
