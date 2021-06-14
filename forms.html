@@ -9,29 +9,43 @@
 
 ">
         <label for="email">Email</label>
-        <input id="email" type="text" name="email" placeholder="Enter your email address"> <br>
+        <input id="email" type="email" name="email" placeholder="Enter your email address"> <br>
 
         <label for="password">Password</label>
         <input id="password" type="password" name="password" placeholder="Enter you password"> <br>
 
         <label for="bio">Bio</label>
-        <textarea id="bio" type="text" placeholder="Compose"></textarea> <br>
+        <textarea id="bio" type="text" name="bio" placeholder="Compose"></textarea> <br>
 
-        <p>How did you hear about us?</p>
-        <input type="radio" name="how_did_you_hear" value="billboard">Billboard<br>
-        <input type="radio" name="how_did_you_hear" value="radio advertisement">Radio Advertisement<br>
-        <input type="radio" name="how_did_you_hear" value="internet advertisement">Internet Advertisement<br>
-        <input type="radio" name="how_did_you_hear" value="other">Other<br>
+        <section>
+        <h4>How did you hear about us?</h4>
 
+        <input type="radio" id="billboard" name="how_did_you_hear" value="billboard">
+        <label for="billboard">Billboard</label><br>
 
-        <p>What web browser are you using?</p>
-        <select name="user_browser">
+        <input type="radio" id="radioAd" name="how_did_you_hear" value="radio advertisement">
+        <label for="radioAd">Radio Advertisement</label><br>
+
+        <input type="radio" id="InternetAdd" name="how_did_you_hear" value="internet advertisement">
+        <label for="InternetAdd">Internet Advertisement</label><br>
+
+        <input type="radio" id="other" name="how_did_you_hear" value="other">
+        <label for="other">Other</label><br>
+        </section>
+
+        <section>
+        <label for="user_browser">What web browser are you using?</label> <br>
+        <select id="user_browser" name="user_browser">
+
             <option value="safari">Safari</option>
             <option value="chrome">Chrome</option>
-            <option value="internet">Internet Explorer</option>
+            <option disabled value="internet">Internet Explorer</option>
+            <option selected value="edge">Edge</option>
+            <option value="opera">Opera</option>
         </select>
         <br>
-        <button>Submit</button>
+        <button>Register</button>
+        </section>
     </form>
   </body>
 </html>
