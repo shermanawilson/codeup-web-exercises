@@ -9,9 +9,9 @@ body, html {
 .message {
     margin: .5em;
     padding: .5em;
-    border: 1px solid lightgray;
+    border: 1.5px solid lightgray;
     width: 100%;
-    border-radius: 5px;
+    border-radius: .5em;
 }
 
 .message-error {
