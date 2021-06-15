@@ -20,12 +20,12 @@ body, html {
 }
 
 .message-info {
-    background-color: lightblue;
+    background-color: #b9d4ea;
     color: #474780;
 }
 
 .message-success {
-    background-color: lightgreen;
+    background-color: #dcf3dc;
     color: #2a7d2a;
 }
 
