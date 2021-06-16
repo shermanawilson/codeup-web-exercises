@@ -58,7 +58,7 @@ a {
 }
 .profile-image {
     position: absolute;
-    margin-top: .0em;
+    top: 15.5em;
 }
 .profile-entry {
     margin: .5em;
