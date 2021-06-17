@@ -117,8 +117,9 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     flex-wrap: wrap;
+    align-content: space-evenly;
+    align-items: center;
     justify-content: space-between;
-    align-content: space-around;
 }
 
 .grey-box {
