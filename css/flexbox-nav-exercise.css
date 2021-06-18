@@ -1,0 +1,76 @@
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: #cacaca;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    /*align-items: baseline;*/
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.section1 {
+    display: flex;
+    padding: 0 5px;
+    margin: 5px;
+    align-self: flex-start;
+}
+.articles {
+    padding: 0 5px;
+}
+
+.products {
+    padding: 0 5px;
+}
+.market {
+    padding: 0 5px;
+}
+
+.jobs {
+    padding: 0 5px;
+}
+a:hover {
+    color: blue;
+}
+
+.logo{
+    padding: .2em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    justify-content: center;
+}
+
+a {
+    display: inline-block;
+}
+
+.section2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 5px;
+    align-self: flex-start;
+
+}
+.follow_us {
+    padding: 0 5px;
+}
+.search_icon {
+    padding: 0 5px;
+}
+
+.shopping_cart_icon {
+    padding: 0 5px;
+}
+
+.profile_icon {
+    padding: 0 5px;
+}
