@@ -1,0 +1,19 @@
+.jumbotron {
+    background-image: url("../img/pizza.png");
+    background-size: 100%;
+}
+
+.jumbotron > h1 {
+    background-color: rgba(202, 202, 202, 0.79);
+    color: #474747;
+}
+
+.card > .main-card-header {
+    background-color: blue;
+    color: white;
+}
+
+/*footer {*/
+/*    background-color: blue;*/
+/*    color: #cacaca;*/
+/*}*/
