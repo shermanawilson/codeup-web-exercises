@@ -13,6 +13,15 @@
     color: white;
 }
 
+
+div > .card {
+    margin: 5px;
+}
+
+div.card-footer {
+    margin: 0;
+}
+
 /*footer {*/
 /*    background-color: blue;*/
 /*    color: #cacaca;*/
