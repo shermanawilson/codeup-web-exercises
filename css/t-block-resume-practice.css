@@ -1,0 +1,29 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+div > p {
+    display: flex;
+    justify-content: center;
+}
+
+ol li  {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Poiret One', cursive;
+  margin: 5px;
+}
+
+h3 {
+    color: blue;
+}
+
+hr {
+    color: #2a7d2a;
+}
+

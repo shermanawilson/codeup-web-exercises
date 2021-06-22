@@ -59,7 +59,7 @@
                aria-selected="false"><span class="badge badge-light">2</span>Cheese and Sauce</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="pizza-toppings" data-toggle="tab" href="#topping" role="tab" aria-controls="toppings"
+            <a class="nav-link" id="pizza-topings" data-toggle="tab" href="#topping" role="tab" aria-controls="toppings"
                aria-selected="false"><span class="badge badge-light">3</span>Toppings</a>
         </li>
     </ul>
@@ -162,9 +162,11 @@
                         </div>
                     </li>
                 </ul>
-                <div class="btn-group card-footer d-flex justify-content-end" style="width: 35%">
-                    <a id="sauce-tab" data-toggle="tab" href="#sauce" role="tab" class="btn btn-primary">< Previous Step</a>
-                    <a id="toppings" data-toggle="tab" href="#toppings" role="tab" class="btn btn-primary">Next Step ></a>
+                <div class="card-footer">
+                    <div class="input-group mb-3 d-flex justify-content-end">
+                        <a class="btn btn-primary"  data-toggle="tab" href="#sauce" role="tab">< Previous Step</a>
+                        <a class="btn btn-primary" data-toggle="tab" href="#topping" role="tab"> Next Step ></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -183,32 +185,32 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="beefCheckbox">
+                                        <label class="form-check-label" for="beefCheckbox">
                                             Beef
                                         </label>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="hamCheckbox">
+                                        <label class="form-check-label" for="hamCheckbox">
                                             Ham
                                         </label>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="phillyCheckbox">
+                                        <label class="form-check-label" for="phillyCheckbox">
                                             Philly Steak
                                         </label>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="baconCheckbox">
+                                        <label class="form-check-label" for="baconCheckbox">
                                             Bacon
                                         </label>
                                     </div>
@@ -225,32 +227,32 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="peppersCheckbox">
+                                        <label class="form-check-label" for="peppersCheckbox">
                                             Green Peppers
                                         </label>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="mushroomsCheckbox">
+                                        <label class="form-check-label" for="mushroomsCheckbox">
                                             Mushrooms
                                         </label>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="onionsCheckbox">
+                                        <label class="form-check-label" for="onionsCheckbox">
                                             Onions
                                         </label>
                                     </div>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="jaleponosCheckbox">
+                                        <label class="form-check-label" for="jaleponosCheckbox">
                                             Jalepeno Peppers
                                         </label>
                                     </div>
@@ -258,7 +260,7 @@
                             </ul>
                             <div class="card-footer">
                                 <div class="input-group mb-3 d-flex justify-content-end">
-                                    <a class="btn btn-primary" id="pizza-toppings" data-toggle="tab" href="#topping" role="tab">Checkout <img src="img/shopping-cart.svg"></a>
+                                    <a class="btn btn-primary" id="pizza-toppings" data-toggle="tab" href="#topping" role="tab">Checkout <img src="img/shopping-cart.svg" alt="shoppingCart"></a>
                                 </div>
                             </div>
                         </div>
