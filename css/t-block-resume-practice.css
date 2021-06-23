@@ -1,4 +1,4 @@
-h1 {
+h1,h2 {
     display: flex;
     justify-content: center;
 }
@@ -21,9 +21,5 @@ body {
 
 h3 {
     color: blue;
-}
-
-hr {
-    color: #2a7d2a;
 }
 
