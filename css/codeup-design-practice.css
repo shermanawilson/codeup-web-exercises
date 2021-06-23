@@ -1,0 +1,24 @@
+* {
+    background-color: #dcdbdb;
+}
+
+.col-sm-3 {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: white;
+    border-radius: 50% ;
+}
+
+.col-sm-3:nth-child(1) {
+    background-color: #e6563b;
+}
+.col-sm-3:nth-child(2) {
+    background-color: #EB9D3A;
+}
+.col-sm-3:nth-child(3) {
+    background-color: #7cb06c;
+}
+.col-sm-3:nth-child(4) {
+    background-color: #00aba9;
+}
