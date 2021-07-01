@@ -38,23 +38,25 @@
         "use strict";
 
         // TODO: Uncomment next line and get the main header element by id
-        const mainHeader = document.getElementById('main-header');
+        const mainHeader = document.querySelector('#main-header');
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
+        // const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
+        mainHeader.innerHTML = "JavaScript is Cool!"
 
         // TODO: Uncomment the next line and get the sub header element by id
-        const subHeader = document.getElementById("sub-header");
+        const subHeader = document.querySelector("#sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        const subSubHeader = document.getElementById("sub-header").style.color = "blue";
+        // const subSubHeader = document.getElementById("sub-header").style.color = "blue";
+        subHeader.style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        const listItems = document.querySelectorAll("ul li");
+        const listItems = document.querySelectorAll("li");
 
         // TODO: Set text color on every other list item to grey
-        const greyColor = document.querySelectorAll("li");
-        for (let i = 0; i <= greyColor.length; i += 2) {
-            greyColor[i].style.color = "grey";
+        // const greyColor = document.querySelectorAll("li");
+        for (let i = 0; i <= listItems.length; i += 2) {
+            listItems[i].style.color = "grey";
         }
 
         // TODO: Set text color of li with dbid = 1 to blue
