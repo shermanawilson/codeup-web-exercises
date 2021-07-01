@@ -29,25 +29,36 @@
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // var mainHeader = ;
+        const mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-
+        const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        const subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
+        const subSubHeader = document.getElementById("sub-header").style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
-        // var listItems = ;
+        const listItems = document.querySelectorAll("ul li");
 
         // TODO: Set text color on every other list item to grey
+        const greyColor = document.querySelectorAll("li");
+        for(let i = 0; i <= greyColor.length; i+= 2) {
+            greyColor[i].style.color = "grey";
+        }
+
         // TODO: Set text color of li with dbid = 1 to blue
+        const dbidColor = document.querySelectorAll("li");
+        dbidColor[0].style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        // var subParagraphs = ;
+        const subParagraphs = document.querySelector(".sub-paragraph");
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        // document.querySelector("p").innerHTML = "Mission Accomplished!";
+        subParagraphs.innerText = "Mission Accomplished!";
+
     })();
 </script>
 </body>
