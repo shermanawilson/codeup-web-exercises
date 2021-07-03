@@ -29,9 +29,11 @@
 <br>
 <button id="btn2">Blue SubHeader</button>
 <br>
-<button id="btn3">Turn Them Grey</button>
+<button id="btn3">Turn Them Grey I Say</button>
 <br>
-<button id="btn4">Mission Accomplished!</button>
+<button id="btn4">I wanna be blue too!</button>
+<br>
+<button id="btn5">Mission Accomplished!</button>
 
 <script>
     (function () {
@@ -60,8 +62,8 @@
         // }
 
         // TODO: Set text color of li with dbid = 1 to blue
-        const dbidColor = document.querySelectorAll("li");
-        dbidColor[0].style.color = "blue";
+        // const dbidColor = document.querySelectorAll("li");
+        // dbidColor[0].style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         const subParagraphs = document.querySelector(".sub-paragraph");
@@ -77,7 +79,7 @@
             const mainHeader = document.querySelector('#main-header');
             mainHeader.innerHTML = "JavaScript is Cool!"
         };
-        document.querySelector('#btn1').addEventListener('mouseover', button1);
+        document.querySelector('#btn1').addEventListener('click', button1);
 
         // Event Listener 2
 
@@ -100,10 +102,19 @@
         // Event Listener 4
 
         const button4 = function fourthButton() {
+            const dbidColor = document.querySelectorAll("li");
+            dbidColor[0].style.color = "blue";
+        };
+        document.querySelector('#btn4').addEventListener('click', button4);
+
+
+        // Event Listener 5
+
+        const button5 = function fithButton() {
             const subParagraphs = document.querySelector(".sub-paragraph");
             subParagraphs.innerText = "Mission Accomplished!";
         };
-        document.querySelector('#btn4').addEventListener('click', button4);
+        document.querySelector('#btn5').addEventListener('click', button5);
 
 
     })();
