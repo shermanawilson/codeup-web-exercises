@@ -25,13 +25,13 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-<button id="btn1" onclick="javaScriptIsCool()">JavaScript is Cool</button>
+<button id="btn1">JavaScript is Cool</button>
 <br>
-<button id="btn2" onclick="blueSubHeader()">Blue SubHeader</button>
+<button id="btn2">Blue SubHeader</button>
 <br>
-<button id="btn3" onclick="greyListItems()">Turn Them Grey</button>
+<button id="btn3">Turn Them Grey</button>
 <br>
-<button id="btn4" onclick="missionAccomplished()">Mission Accomplished!</button>
+<button id="btn4">Mission Accomplished!</button>
 
 <script>
     (function () {
@@ -70,42 +70,68 @@
         // document.querySelector("p").innerHTML = "Mission Accomplished!";
         subParagraphs.innerText = "Mission Accomplished!";
 
+        // create a handler function
+        var listener = function (event) {
+            // TODO: Uncomment next line and get the main header element by id
+            const mainHeader = document.querySelector('#main-header');
+            // TODO: Set inner html of mainHeader to "JavaScript is Cool"
+            // const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
+            mainHeader.innerHTML = "JavaScript is Cool!"
+        }
+        // register the listener to handle clicks on btn1
+        document.querySelector('#btn1').addEventListener('click', listener);
 
+        // target.addEventListener(type, listener);
+
+        // create a handler function
+        var listener = function (event) {
+            // TODO: Uncomment the next line and get the sub header element by id
+            const subHeader = document.querySelector("#sub-header");
+
+            // TODO: Set the text color of subHeader to blue
+            // const subSubHeader = document.getElementById("sub-header").style.color = "blue";
+            subHeader.style.color = "blue";
+        }
+        // register the listener to handle clicks on btn1
+        document.querySelector('#btn2').addEventListener('click', listener);
+
+        // target.addEventListener(type, listener);
+
+        // create a handler function
+        var listener = function (event) {
+            // TODO: Uncomment the next line and get all list items
+            const listItems = document.querySelectorAll("li");
+
+            // TODO: Set text color on every other list item to grey
+            // const greyColor = document.querySelectorAll("li");
+            for (let i = 0; i < listItems.length; i += 2) {
+                listItems[i].style.color = "grey";
+            }
+        }
+        // register the listener to handle clicks on btn1
+        document.querySelector('#btn3').addEventListener('click', listener);
+
+        // target.addEventListener(type, listener);
+
+        // create a handler function
+        var listener = function (event) {
+            // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+            const subParagraphs = document.querySelector(".sub-paragraph");
+
+            // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+            // document.querySelector("p").innerHTML = "Mission Accomplished!";
+            subParagraphs.innerText = "Mission Accomplished!";
+        }
+        // register the listener to handle clicks on btn1
+        document.querySelector('#btn4').addEventListener('click', listener);
+
+        // target.addEventListener(type, listener);
     })();
 
-    function javaScriptIsCool() {
-        const mainHeader = document.getElementById('main-header');
-        // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
-    }
 
-    function blueSubHeader() {
-        // TODO: Uncomment the next line and get the sub header element by id
-        const subHeader = document.getElementById("sub-header");
 
-        // TODO: Set the text color of subHeader to blue
-        const subSubHeader = document.querySelector("#sub-header").style.color = "blue";
-    }
 
-    function greyListItems() {
-        // TODO: Uncomment the next line and get all list items
-        const listItems = document.querySelectorAll("ul li");
-
-        // TODO: Set text color on every other list item to grey
-        const greyColor = document.querySelectorAll("li");
-        for (let i = 0; i <= greyColor.length; i += 2) {
-            greyColor[i].style.color = "grey";
-        }
-    }
-
-    function missionAccomplished() {
-        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        const subParagraphs = document.querySelector(".sub-paragraph");
-
-        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        // document.querySelector("p").innerHTML = "Mission Accomplished!";
-        subParagraphs.innerText = "Mission Accomplished!";
-    }
 </script>
+
 </body>
 </html>
