@@ -41,23 +41,23 @@
         const mainHeader = document.querySelector('#main-header');
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
         // const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
-        mainHeader.innerHTML = "JavaScript is Cool!"
+        // mainHeader.innerHTML = "JavaScript is Cool!"
 
         // TODO: Uncomment the next line and get the sub header element by id
         const subHeader = document.querySelector("#sub-header");
 
         // TODO: Set the text color of subHeader to blue
         // const subSubHeader = document.getElementById("sub-header").style.color = "blue";
-        subHeader.style.color = "blue";
+        // subHeader.style.color = "blue";
 
         // TODO: Uncomment the next line and get all list items
         const listItems = document.querySelectorAll("li");
 
         // TODO: Set text color on every other list item to grey
         // const greyColor = document.querySelectorAll("li");
-        for (let i = 0; i < listItems.length; i += 2) {
-            listItems[i].style.color = "grey";
-        }
+        // for (let i = 0; i < listItems.length; i += 2) {
+        //     listItems[i].style.color = "grey";
+        // }
 
         // TODO: Set text color of li with dbid = 1 to blue
         const dbidColor = document.querySelectorAll("li");
@@ -68,37 +68,45 @@
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         // document.querySelector("p").innerHTML = "Mission Accomplished!";
-        subParagraphs.innerText = "Mission Accomplished!";
+        // subParagraphs.innerText = "Mission Accomplished!";
+
+
+        // Event Listener 1
 
         // create a handler function
-        var listener = function (event) {
+        const button1 = function (event) {
             // TODO: Uncomment next line and get the main header element by id
             const mainHeader = document.querySelector('#main-header');
             // TODO: Set inner html of mainHeader to "JavaScript is Cool"
             // const mainHTMLHeader = document.querySelector("#main-header").innerHTML = "JavaScript is Cool";
             mainHeader.innerHTML = "JavaScript is Cool!"
-        }
+        };
         // register the listener to handle clicks on btn1
-        document.querySelector('#btn1').addEventListener('click', listener);
+        document.querySelector('#btn1').addEventListener('click', button1);
 
         // target.addEventListener(type, listener);
 
+        // Event Listener 2
+
         // create a handler function
-        var listener = function (event) {
+        const button2 = function (event) {
             // TODO: Uncomment the next line and get the sub header element by id
             const subHeader = document.querySelector("#sub-header");
 
             // TODO: Set the text color of subHeader to blue
             // const subSubHeader = document.getElementById("sub-header").style.color = "blue";
             subHeader.style.color = "blue";
-        }
+        };
         // register the listener to handle clicks on btn1
-        document.querySelector('#btn2').addEventListener('click', listener);
+        document.querySelector('#btn2').addEventListener('click', button2);
 
         // target.addEventListener(type, listener);
 
+        // Event Listener 3
+
+
         // create a handler function
-        var listener = function (event) {
+        const button3 = function (event) {
             // TODO: Uncomment the next line and get all list items
             const listItems = document.querySelectorAll("li");
 
@@ -107,28 +115,29 @@
             for (let i = 0; i < listItems.length; i += 2) {
                 listItems[i].style.color = "grey";
             }
-        }
+        };
         // register the listener to handle clicks on btn1
-        document.querySelector('#btn3').addEventListener('click', listener);
+        document.querySelector('#btn3').addEventListener('click', button3);
 
         // target.addEventListener(type, listener);
 
+        // Event Listener 4
+
+
         // create a handler function
-        var listener = function (event) {
+        const button4 = function (event) {
             // TODO: Uncomment the next line and get all elements with class name sub-paragraph
             const subParagraphs = document.querySelector(".sub-paragraph");
 
             // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
             // document.querySelector("p").innerHTML = "Mission Accomplished!";
             subParagraphs.innerText = "Mission Accomplished!";
-        }
+        };
         // register the listener to handle clicks on btn1
-        document.querySelector('#btn4').addEventListener('click', listener);
+        document.querySelector('#btn4').addEventListener('click', button4);
 
         // target.addEventListener(type, listener);
     })();
-
-
 
 
 </script>
