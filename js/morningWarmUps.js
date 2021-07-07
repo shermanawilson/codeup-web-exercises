@@ -19,7 +19,6 @@ console.log(countSpaces("Jenny, Where did you go??"));
 console.log(countSpaces(54));
 
 
-
 // July 6th 2021
 // TODO: Create a function named capitalizeAllNames that accepts an array of strings and returns the array with all of its elements capitalized.
 // Example:  capitalizeAllNames(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["BOB","SETH","TOFU","TOYOTA"]
@@ -28,6 +27,7 @@ function capitalizeAllNames() {
     const arrToUp = String.prototype.toUpperCase.apply(arr).split(",");
     return arrToUp;
 }
+
 console.log(capitalizeAllNames());
 // // TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
 // //  each string being capitalized while having the rest of the string lowercase look at the example below for reference.
@@ -53,9 +53,9 @@ var personOne = {
     heightInInches: 65
 }
 var newObj = {
-getFullName : function() {
-    return personOne.firstName + " " + personOne.lastName;
-}
+    getFullName: function () {
+        return personOne.firstName + " " + personOne.lastName;
+    }
 };
 console.log(newObj.getFullName());
 // TODO: Create a method on the object down below named getNicelyFormattedFullName that when called returns the
@@ -69,12 +69,11 @@ var personTwo = {
 }
 
 var newObj = {
-    getNicelyFormattedFullName : function() {
-
-            if (typeof personTwo.firstName !== 'string' || typeof personTwo.lastName !== 'string' ) return ''
-            return personTwo.firstName.charAt(0).toUpperCase() + personTwo.firstName.slice(1) + " " + personTwo.lastName.charAt(0).toUpperCase() + personTwo.lastName.slice(1);
-
-        // return personTwo.firstName + " " + personTwo.lastName;
+    getNicelyFormattedFullName: function () {
+        const person2FN = personTwo.firstName;
+        const person2LN = personTwo.lastName;
+        if (typeof person2FN !== 'string' || typeof person2LN !== 'string') return ''
+        return person2FN.charAt(0).toUpperCase() + person2FN.slice(1) + " " + person2LN.charAt(0).toUpperCase() + person2LN.slice(1);
     }
 };
 console.log(newObj.getNicelyFormattedFullName());
