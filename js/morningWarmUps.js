@@ -29,17 +29,60 @@ function capitalizeAllNames() {
     return arrToUp;
 }
 console.log(capitalizeAllNames());
-// TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
-//  each string being capitalized while having the rest of the string lowercase look at the example below for reference.
-// Example:  capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["Bob","Seth","Tofu","Toyota"]
+// // TODO: Create a function named capitalizeFirstLetter that accepts an array of strings and returns the array with all of the first letters in
+// //  each string being capitalized while having the rest of the string lowercase look at the example below for reference.
+// // Example:  capitalizeFirstLetter(["bob","Seth","TOFU","Toyota"]) ---- returns ----> ["Bob","Seth","Tofu","Toyota"]
+//
+// function capitalizeFirstLetter(value) {
+//     const words = value.split(" ");
+//     for (let i = 0; i < words.length; i++) {
+//         words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+//     // return value[0].toUpperCase() + value.substring(1);
+//         for (const sElement of words.join(" ")) {
+//             return console.log(capitalizeFirstLetter(value));
+//         };
+// }
 
-function capitalizeFirstLetter(value) {
-    // const arraay = value;
-    // const words = arraay.split(" ");
-    // for (let i = 0; i < words.length; i++) {
-    //     words[i] = words[i][0].toUpperCase() + words[i].substr(1);
-    // // return value[0].toUpperCase() + value.substring(1);
-    //     words.join(" ");
-    const finalSentence = value.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase());
+// July 7th 2021
+// TODO: Create a method on the object down below named getFullName that when called returns the users full name using the "this" key term.
+// Example: personOne.getFullName() ---- returns ----> "silvia floopertan"
+var personOne = {
+    firstName: "silvia",
+    lastName: "floopertan",
+    ageInYears: 34,
+    heightInInches: 65
 }
-console.log(capitalizeFirstLetter(['hello world my name is shy']));
+var newObj = {
+getFullName : function() {
+    return personOne.firstName + " " + personOne.lastName;
+}
+};
+console.log(newObj.getFullName());
+// TODO: Create a method on the object down below named getNicelyFormattedFullName that when called returns the
+//  users full name with both first letters in the names being capitalized look at example down below for more reference.
+// Example: personOne.getNicelyFormattedFullName() ---- returns ----> "Dan Valdarez"
+var personTwo = {
+    firstName: "dan",
+    lastName: "valdarez",
+    ageInYears: 61,
+    heightInInches: 73
+}
+
+var newObj = {
+    getNicelyFormattedFullName : function() {
+
+            if (typeof personTwo.firstName !== 'string' || typeof personTwo.lastName !== 'string' ) return ''
+            return personTwo.firstName.charAt(0).toUpperCase() + personTwo.firstName.slice(1) + " " + personTwo.lastName.charAt(0).toUpperCase() + personTwo.lastName.slice(1);
+
+        // return personTwo.firstName + " " + personTwo.lastName;
+    }
+};
+console.log(newObj.getNicelyFormattedFullName());
+// TODO: Create a method on the object below that gives us the behavior that the example implies.
+// Example: personThree.intro() ---- returns ----> "Hello, My name is Arlene Martinez and I am 25 years old"
+var personThree = {
+    firstName: "arlene",
+    lastName: "martinez",
+    ageInYears: 25,
+    heightInInches: 62
+}
