@@ -31,5 +31,5 @@ $('#main-one').bind('click', function() {
         "whatever is bringing you down, get rid of it. Because you'll find that when you're free, your true creativity, your true self comes out.");
 });
 
-// let mainOne = document.querySelector('#main-one');  is equal of $('#main-one')
-// mainOne.addEventListener('click', function mainFunction()  is equal to .bind('click', function()
+// *** let mainOne = document.querySelector('#main-one'); **  is equal to ** $('#main-one') **
+// mainOne.addEventListener('click', function mainFunction(); **  is equal to ** .bind('click', function() **
