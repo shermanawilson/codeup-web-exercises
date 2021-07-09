@@ -143,11 +143,31 @@ function arrayOfObjectsToStrings(arrayOfObjects) {
     })
     console.log(results);
 }
-
-arrayOfObjectsToStrings(ar)
+// console.log(arrayOfObjectsToStrings())
+// arrayOfObjectsToStrings();
 // TODO: Create a function named getTallUsers that accepts an array of objects. The objects in the array will be in the same format
 //  as PersonOne, PersonTwo, and PersonThree. The functions job is to return an array of users that have heightInInches equal to or greater than 65.
 var people = [personOne, personTwo, personThree];
 // Example: getTallUsers(people)
 // ---- returns ----> [{firstName: "silvia", lastName: "floopertan", ageInYears: 34, heightInInches: 65},
 //
+function getTallUsers(arrayOfObjects) {
+    //filtering results, we start with
+    //something to push results to
+    var tallUsers = [];
+
+    for (let i = 0; i < arrayOfObjects.length; i++) {
+        // console.log(arrayOfObjects[i]);
+        const currentUser = arrayOfObjects[i]
+        const currentUsersHeight = currentUser.heightInInches
+
+        // console.log(heightInInches);
+
+        if (currentUsersHeight >= 65) {
+            tallUsers.push(currentUser);
+        }
+    }
+    return tallUsers;
+}
+
+console.log(getTallUsers(people));
