@@ -20,6 +20,7 @@ $(document).keydown(function (event) { // allows whatever the function for press
     var key = keysToBePassed[event.keyCode];
     // this is for the array of the code pattern,
     var requiredKey = konamiCode[konamiCodeLocation];
+    //this just logs each key you press's keycode
     console.log(event.keyCode);
     //if what's being typed is equal in sequence
     if (key == requiredKey) {
@@ -37,14 +38,17 @@ $(document).keydown(function (event) { // allows whatever the function for press
 
 function theCodeWorks() {
     //makes background image of my choosing
-    document.body.style.backgroundImage = "url('img/watercolor.jpeg')";
+    document.body.style.backgroundImage = "url('img/mountin.jpeg')";
+
+    // document.body.style.backgroundImage = "url('')"
 
     //added audio file to play once reached
-    var audio = new Audio('audio/Symphony No.6 (1st movement).mp3');
+    var audio = new Audio('audio/Kay-S-Beats-Juice-RB-Type-Hip-hop-Trap-Beat-ProdKayS.mp3');
     audio.play();
 
+
     // this line changes the text once the code is active
-    document.body.innerHTML = "Wow, I cant believe you made it! Welp, here's some classical music and beautiful art for our background! Oh , and if you're curious about what the key codes you're typing are you can always open up your inspector tool and check it out in the console!!"
+    document.body.innerHTML = "<h1>Wow, I cant believe you made it! Welp, here's some classical music and beautiful art for our background! Oh , and if you're curious about what the key codes you're typing are you can always open up your inspector tool and check it out in the console!!</h1>"
 
     //alerts user that they now have 30 lives
     alert("You have added 30 lives!");
