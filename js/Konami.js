@@ -1,11 +1,6 @@
 "use strict";
-// array that has each part of the code
-$(document).keydown(function (event) {
-    console.log(event.keyCode);
-});
-
-// this is an object named allowedKeys
-var keyPattern = {
+// array that has each piece of the code
+var keysToBePassed = {
     37: 'left',
     38: 'up',
     39: 'right',
@@ -14,66 +9,43 @@ var keyPattern = {
     66: 'b'
 };
 
-// the 'official' Konami Code sequence
+//this array holds the pattern we want the user to type in to get lives
 var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+// this is where in the array it starts
+var konamiCodeLocation = 0;
 
-// a variable to remember the 'position' the user has reached so far.
-var konamiCodePosition = 0;
-
-
-var keyDownFunction = function (e) {
-    // get the value of the key code from the key map
-    var key = keyPattern[e.keyCode];
-    // get the value of the required key from the konami code
-    var requiredKey = konamiCode[konamiCodePosition];
-
-    // compare the key with the required key
+//this is the function that holds all the functionality
+$(document).keydown(function (event) { // allows whatever the function for pressed down wants to dispaly
+    //this links our object that holds keycodes
+    var key = keysToBePassed[event.keyCode];
+    // this is for the array of the code pattern,
+    var requiredKey = konamiCode[konamiCodeLocation];
+    console.log(event.keyCode);
+    //if what's being typed is equal in sequence
     if (key == requiredKey) {
-
-        // move to the next key in the konami code sequence
-        konamiCodePosition++;
-
-        // if the last key is reached, activate cheats
-        if (konamiCodePosition == konamiCode.length) {
-            activateCheats();
-            konamiCodePosition = 0;
-        }
+        //then go to the next key typed
+        konamiCodeLocation++;
+        //if the location is the same length as the code then it's going to run the code works function and start the location at 0
+        if (konamiCodeLocation == konamiCode.length) {
+            theCodeWorks();
+            konamiCodeLocation = 0;
+        } // if it does not match, it's going to reset the location to 0 until it does
     } else {
-        konamiCodePosition = 0;
+        konamiCodeLocation = 0;
     }
-}
-// add keydown event listener
-$(document).keydown(keyDownFunction());
+});
 
+function theCodeWorks() {
+    //makes background image of my choosing
+    document.body.style.backgroundImage = "url('img/watercolor.jpeg')";
 
-
-// document.addEventListener('keydown', function (e) {
-//     // get the value of the key code from the key map
-//     var key = keyPattern[e.keyCode];
-//     // get the value of the required key from the konami code
-//     var requiredKey = konamiCode[konamiCodePosition];
-//
-//     // compare the key with the required key
-//     if (key == requiredKey) {
-//
-//         // move to the next key in the konami code sequence
-//         konamiCodePosition++;
-//
-//         // if the last key is reached, activate cheats
-//         if (konamiCodePosition == konamiCode.length) {
-//             activateCheats();
-//             konamiCodePosition = 0;
-//         }
-//     } else {
-//         konamiCodePosition = 0;
-//     }
-// });
-
-function activateCheats() {
-    document.body.style.backgroundImage = "url('images/cheatBackground.png')";
-
-    var audio = new Audio('audio/pling.mp3');
+    //added audio file to play once reached
+    var audio = new Audio('audio/Symphony No.6 (1st movement).mp3');
     audio.play();
 
-    alert("cheats activated");
+    // this line changes the text once the code is active
+    document.body.innerHTML = "Wow, I cant believe you made it! Welp, here's some classical music and beautiful art for our background! Oh , and if you're curious about what the key codes you're typing are you can always open up your inspector tool and check it out in the console!!"
+
+    //alerts user that they now have 30 lives
+    alert("You have added 30 lives!");
 }
