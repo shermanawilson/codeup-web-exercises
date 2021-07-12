@@ -52,6 +52,8 @@ var allH1;
 var allP;
 var allLi;
 var allEm;
+var hoverIn;
+var hoverOut;
 $(document).ready(function () {
     //id selectors
 
@@ -90,27 +92,39 @@ $(document).ready(function () {
 
     //combines all h1, p and li elements and highlights them all yellow!
     allEm = $("h1, p, li");
-    allEm.css('background-color', 'yellow');
+    allEm.css('background-color', '#ffffcc');
 
     // turns second h1 blue when clicked
     mainHeader2 = $('#main-header2');
         $(mainHeader2).click(function () {
-        mainHeader2.css('background-color', 'lightblue');
-
+            mainHeader2.css('background-color', 'lightblue');
+        });
 
         //changes font size of all p tags to 18px
         $(allP).dblclick(function () {
             allP.css('font-size', '18px');
         });
 
-        //changes all li to red when hovered over
-        $(allLi).hover(function () {
+        //this will turn text red
+        hoverIn = function () {
             allLi.css('color', 'red');
-        }, //this will change it back to black once the user is no longer hovering
-          $(allLi).hover(function () {
-              allLi.css('color', 'black');
-            }))
+        }
+        //this will turn text back to black
+        hoverOut = function () {
+            allLi.css('color', 'black');
+        }
+        // this will make the functionality work for hovering
+        $(allLi).hover(hoverIn, hoverOut);
+
+        // bellow is the same thing but written out longer
+
+        // //changes all li to red when hovered over
+        // $(allLi).hover(function () {
+        //     allLi.css('color', 'red');
+        // }, //this will change it back to black once the user is no longer hovering
+        //   $(allLi).hover(function () {
+        //       allLi.css('color', 'black');
+        //     }))
     });
 
 
-});
