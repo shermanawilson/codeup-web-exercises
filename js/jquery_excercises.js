@@ -2,10 +2,10 @@
 // JavaScript
 
 // When you click on the text, it will say something nice :)
-// let mainOne = document.querySelector('#main-one');
-// mainOne.addEventListener('click', function mainFunction() {
-//     alert('You are enough');
-// });
+let mainOne = document.querySelector('#main-one');
+mainOne.addEventListener('click', function mainFunction() {
+    alert('You are enough');
+});
 
 // console.log($(document));
 
@@ -14,21 +14,21 @@
 // J Query
 
 // down bellow allows an alert to go off when page is loaded
-// var h1;
-// var randoDiv;
-// var image;
-// $(document).ready(function() {
-//      h1 = $('#main-one');
-//      image = $('#img');
-//      randoDiv = $('#randomDiv');
-//     console.log(h1);
-//     image.css('width', '50%');
-//     image.css('border', 'solid 15px hotpink');
-//     randoDiv.html('<input type="date">');
-//     h1.html('If you click the image now, I will give you a quote! :)');
-//     $(h1).click(alert('You are enough'));
-//
-// });
+var h1;
+var randoDiv;
+var image;
+$(document).ready(function() {
+     h1 = $('#main-one');
+     image = $('#img');
+     randoDiv = $('#randomDiv');
+    console.log(h1);
+    image.css('width', '50%');
+    image.css('border', 'solid 15px hotpink');
+    randoDiv.html('<input type="date">');
+    h1.html('If you click the image now, I will give you a quote! :)');
+    $(h1).click(alert('You are enough'));
+
+});
 
 // bellow allows the user to click on the text and have a nice quote alert to them
 
@@ -51,13 +51,16 @@ var fontSize;
 var allH1;
 var allP;
 var allLi;
+var allEm;
 $(document).ready(function() {
      ptag = $('#main-ptag');
     ptag.css('background-color', 'skyblue');
     $(ptag).click(alert($(ptag).text()));
+
     mainHeader = $('#main-header');
     mainHeader.css('background-color', 'pink');
     $(mainHeader).click(alert($(mainHeader).text()));
+
     codeupBorder = $('.codeup');
     codeupBorder.css({'border':'solid red 1px'});
     fontSize = $('li');
@@ -66,6 +69,10 @@ $(document).ready(function() {
     allP = $('p');
     allLi = $('li');
     $(allH1).click(alert($(allH1).text()));
-    var allEm = allH1 + allP + allLi;
+    allEm = $( "h1, p, li" );
+
+
+
+
 
 });
