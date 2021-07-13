@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    main {
+      background-color: #ff88b3;
+    }
+
+    .huge {
+      font-size: xxx-large;
+    }
+
+    .green {
+        color: lawngreen;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1></h1>
+  <p>Wussup</p>
+</main>
+
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+  'use strict'
+
+  $(document).ready(function () {
+
+    $('main').html("<h1>Essential Oils</h1><p>I'm an extra Paragraph</p>").css(
+            {
+              "color": "blue",
+              "font-style": "Italic"
+            });
+
+    var mainCurrentHTML = $('main').html();
+
+    $('main').html(mainCurrentHTML + "<p class='green'>I will not overwrite the contents above</p>")
+
+    var headerValue = $('h1').html('Woah Girl');
+
+    $('main').append("<p><strong> I was appended </strong></p>")
+
+    console.log(headerValue)
+
+    $('p').addClass('huge');
+
+    function removeClassFromPTags() {
+      $('p').removeClass('huge');
+    }
+    setTimeout(removeClassFromPTags, 2000);
+
+
+
+  })
+</script>
+</body>
+</html>
