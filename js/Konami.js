@@ -38,7 +38,7 @@ $(document).keydown(function (event) { // allows whatever the function for press
 
 function theCodeWorks() {
     //makes background image of my choosing
-    document.body.style.backgroundImage = "url('img/mountin.jpeg')";
+    document.body.style.backgroundImage = "url('http://sfwallpaper.com/images/background-images-for-websites-8.jpg')";
 
     // document.body.style.backgroundImage = "url('')"
 
@@ -48,7 +48,29 @@ function theCodeWorks() {
 
 
     // this line changes the text once the code is active
-    document.body.innerHTML = "<h1>Wow, I cant believe you made it! Welp, here's some classical music and beautiful art for our background! Oh , and if you're curious about what the key codes you're typing are you can always open up your inspector tool and check it out in the console!!</h1>"
+    document.body.innerHTML = "<h1>\'Thanks for stopping by! Here are a few quotes :)'\</h1>"
+    // "<h1>\'Thanks for stopping by! Here are a few quotes :)'\</h1>"
+    // "<p>\"The events in our lives happen in a sequence in time, but in their significance to ourselves they find their own order the continuous thread of revelation.\" Eudora Welty</p>"
+    // "<p>\'They say a person needs just three things to be truly happy in this world: Someone to love, something to do, and something to hope for.'\</p>"
+    // "<p>\'There's nothing like deep breaths after laughing that hard. Nothing in the world like a sore stomach for the right reasons'\</p>"
+    // "<p>\'It's so hard to forget pain, but it's even harder to remember sweetness. We have no scar to show for happiness. We learn so little from peace.'\</p>"
+    // "<p>\'It isn't what you have or who you are or where you are or what you are doing that makes you happy or unhappy. It is what you think about it.'\</p>"
+    //     "</div>"
+    function paragraphFunction(p_tags) {
+        var html = '<div id="paragraphs">';
+        html += '<h1>' + "Thanks for stopping by! Here are a few quotes :)" + '</h1>';
+        html += '<p>' + 'They say a person needs just three things to be truly happy in this world: Someone to love, something to do, and something to hope for.' + '</p>';
+        html += '<p>' + "It's so hard to forget pain, but it's even harder to remember sweetness. We have no scar to show for happiness. We learn so little from peace." + '</p>';
+        html += '<p>' + "It isn't what you have or who you are or where you are or what you are doing that makes you happy or unhappy. It is what you think about it." + '</p>';
+        html += '</div>';
+
+        return html;
+    }
+    document.body.innerHTML = paragraphFunction();
+
+    $("#paragraphs").click(function(){
+        $("#paragraphs").animate({height: "300px"});
+    });
 
     //alerts user that they now have 30 lives
     alert("You have added 30 lives!");

@@ -3,6 +3,9 @@
 <head>
     <title>Konami Code</title>
     <style>
+        li {
+            text-decoration: none;
+        }
         img {
             background-repeat: repeat;
             width: 100%;
@@ -17,14 +20,32 @@
             justify-content: center;
         }
 
+        p {
+            display: flex;
+            justify-content: center;
+            color: #38a2c4;
+            font-family: 'Zen Loop', cursive;
+            font-size: xxx-large;
+        }
+
         h1 {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            color: #cbffcd;
-            font-style: italic;
+            flex-wrap: wrap;
+            color: #1b23c7;
+            font-family: 'Zen Loop', cursive;
+            font-weight: bolder;
+            font-size: xxx-large;
+        }
+        .row {
+            display: flex;
+            justify-content: space-around;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
+
     <script src="js/jquery-2.2.4.js"></script>
 </head>
 <body>
@@ -34,24 +55,25 @@
         allowFullScreen></iframe>
 <p><a href="https://giphy.com/gifs/cartoonhangover-finger-gun-heyy-hey-gurl-24FRYDjnAbx411MSYf"></a></p>
 
-<div class="row" id="main-row">
+<div class="row d-flex justify-content-around" id="main-row">
     <div class="col-6" id="firstCol">
-        <ul>
-            <li><iframe src="https://giphy.com/embed/KZ4riEgi1CCBmUzfnQ" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/studiosoriginals-KZ4riEgi1CCBmUzfnQ">via GIPHY</a></p></li>
-            <li><iframe src="https://giphy.com/embed/WryMCDm9E0TCOjm58R" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cartoonhangover-cool-son-costume-quest-WryMCDm9E0TCOjm58R">via GIPHY</a></p></li>
-            <li><iframe src="https://giphy.com/embed/l1J9QITvCADtk1LEY" width="480" height="366" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/percolategalactic-cool-ok-l1J9QITvCADtk1LEY">via GIPHY</a></p></li>
-            <li><img src="img/" alt="img"></li>
-        </ul>
+        <div>
+<!--            <div><iframe src="https://giphy.com/embed/KZ4riEgi1CCBmUzfnQ" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/studiosoriginals-KZ4riEgi1CCBmUzfnQ"></a></p></div><br>-->
+<!--            <div><iframe src="https://giphy.com/embed/WryMCDm9E0TCOjm58R" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cartoonhangover-cool-son-costume-quest-WryMCDm9E0TCOjm58R"></a></p></div><br>-->
+            <div><iframe src="https://giphy.com/embed/l1J9QITvCADtk1LEY" width="350" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/percolategalactic-cool-ok-l1J9QITvCADtk1LEY"></a></p></div>
+            <div><iframe src="https://giphy.com/embed/7TH12SPk3NNug" width="350" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/beyonce-broke-7TH12SPk3NNug"></a></p></div>
+        </div>
     </div>
     <div class="col-6" id="secondCol">
-        <ul>
-            <li><img src="img/" alt="img"></li>
-            <li><img src="img/" alt="img"></li>
-            <li><img src="img/" alt="img"></li>
-            <li><img src="img/" alt="img"></li>
-        </ul>
+        <div>
+<!--            <div><div style="width:100%"><div style="height:0;padding-bottom:62.42038216560509%;position:relative;width:100%"><iframe allowfullscreen="" frameBorder="0" height="100%" src="https://giphy.com/embed/FjVbOnzUFo1nLTRNBR/video" style="left:0;position:absolute;top:0" width="100%"></iframe></div></div></div>-->
+            <div><iframe src="https://giphy.com/embed/z1fnhcW7ot5KbbdAlY" width="350" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dog-doge-dealwithit-z1fnhcW7ot5KbbdAlY"></a></p></div>
+            <div><iframe src="https://giphy.com/embed/iv9Na4kNaAH84" width="350" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/rap-just-a-friend-biz-markie-iv9Na4kNaAH84"></a></p></div><br>
+<!--            <div><iframe src="https://giphy.com/embed/TMM5NwWO0RiSc" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/90s-will-smith-fresh-prince-of-bel-air-TMM5NwWO0RiSc"></a></p></div><br>-->
+        </div>
     </div>
 </div>
+<div id="extraOne"></div>
 <script src="js/Konami.js"></script>
 </body>
 </html>
