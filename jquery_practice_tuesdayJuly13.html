@@ -18,7 +18,7 @@
   </style>
 </head>
 <body>
-<main>
+<main class="huge">
   <h1></h1>
   <p>Wussup</p>
 </main>
@@ -48,13 +48,30 @@
     $('p').addClass('huge');
 
     function removeClassFromPTags() {
-      $('p').removeClass('huge');
+      $('p').removeClass('huge green');
     }
-    setTimeout(removeClassFromPTags, 2000);
+      var anH1 = $('h1');
+      function toggleClassFromPTags() {
+          anH1.toggleClass('huge');
+      }
 
+      function removeAllClasses(selector) {
+          $(selector).removeClass()
+      }
 
+      $('main').addClass("huge");
+
+    removeAllClasses("*")
+
+    setTimeout(removeClassFromPTags, 1000);
+
+    setInterval(toggleClassFromPTags, 1000);
+
+    anH1.click(toggleClassFromPTags)
 
   })
+
+
 </script>
 </body>
 </html>
