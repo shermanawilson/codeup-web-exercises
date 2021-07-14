@@ -1,0 +1,64 @@
+[
+  {
+    "title": "Hammer",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 20
+  },
+  {
+    "title": "Drill",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 100
+  },
+  {
+    "title": "Plunger",
+    "quantity": 24,
+    "categories": [
+      "tool"
+    ],
+    "price": 100
+  },
+  {
+    "title": "Mechanical Saw",
+    "quantity": 40,
+    "categories": [
+      "tool",
+      "powered"
+    ],
+    "price": 100
+  },
+  {
+    "title": "Weed Eater",
+    "quantity": 32,
+    "categories": [
+      "tool",
+      "powered",
+      "outdoor"
+    ],
+    "price": 100
+  },
+  {
+    "title": "Mower",
+    "quantity": 5,
+    "categories": [
+      "tool",
+      "gas",
+      "outdoor"
+    ],
+    "price": 200
+  },
+  {
+    "title": "Screwdrivers",
+    "quantity": 25,
+    "categories": [
+      "tool"
+    ],
+    "price": 10
+  }
+]

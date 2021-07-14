@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Request</title>
+</head>
+<body>
+<h1>Ajax Request</h1>
+<p>loading...</p>
+
+<mainv id="main_content">
+
+</mainv>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/jquery-2.2.4.js"></script>
+<script>
+
+  //difference between JS and JSON , the keys will be a string and the value will be to the right
+  // JS interprets them as the same thing
+  // keys are surrounded by strings
+
+  // JSON OBJECT
+  // {
+  //         "name1": "value1",
+  //         "name2": "value2"
+  // }
+ //
+ // {
+ //  "jerky": "chicken",
+ //  "colors" : ['green','red','purple']
+ //  }
+// Ajax
+  $(document).ready(function () {
+    'use strict'
+
+      $.ajax("data/user_request.json")
+          .done(function(data, status, jqXhr) {
+          // alert("AJAX call completed successfully!");
+          console.log("Request status: " + status);
+          console.log("Data returned from server:");
+          console.log(data);
+      });
+
+    $.ajax("https://raw.githubusercontent.com/CodeupClassroom/polaris-web-exercises/main/data/users.json", {
+        type: "GET",
+        dataType: "json"
+    })
+        .done(function(data, status,) {
+
+            var htmlMessages = "";
+
+            for(let i = 0; i < data.length; i++) {
+                var currentUser = data[i];
+                var htmlMessage = "<p>"+ currentUser.first_name + " " + currentUser.last_name + "</p><img src='currentUser.gender' alt='images'>"
+                console.log(currentUser);
+                $('#main_content').html(htmlMessage)
+            }
+        // alert("This is mines!");
+        // console.log("Request status: " + status);
+        // console.log("Data returned from server:");
+
+
+
+
+
+
+
+
+
+
+
+        console.log(data);
+    })
+        .fail(function(jqXhr, status, error) {
+            alert("There was an error! Check the console for details");
+            console.log("Response status: " + status);
+            console.log("Error object: " + error);
+        }).always(function () {
+            //this will pass regardless if it fails or not
+            alert('ajax request has finished');
+    })
+    // {
+    //   "stringProp": "stringValue",
+    //         "numberProp": 1,
+    //         "objectProp": {
+    //   "prop": "value"
+    // },
+    //   "arrayProp" : ["item1", "item2"],
+    //         "arrayOfObjectsProp" : [
+    //   {
+    //     "prop": "value"
+    //   },
+    //   {
+    //     "prop": "value"
+    //   }
+    // ],
+    //         "boolProp"  : true,
+    //         "nullProp"  : null
+    // }
+
+
+  })
+
+</script>
+</body>
+</html>
