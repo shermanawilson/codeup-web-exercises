@@ -9,40 +9,44 @@
 <div id="posts"></div>
 
 
-
-
-
-
-
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
 
-$(document).ready(function () {
+    $(document).ready(function () {
 
-  $.ajax("data/blog.json", {
-    type: "GET",
-    dataType: "json"
-  })
-  .done(function (data) {
+        $.ajax("data/blog.json", {
+            type: "GET",
+            dataType: "json"
+        })
+            .done(function (data) {
 
-    console.log(data);
-    for (let i = 0; i < data.length; i++) {
+                console.log(data);
+                for (let i = 0; i < data.length; i++) {
 
-      console.log(data);
+                    console.log(data);
+                    var html = "";
+                    var title = data[i].title;
+                    var content = data[i].content;
+                    var categories = data[i].categories.join(", ");
+                    var date = data[i].date;
 
-      var title = data[i].title;
-      var content = data[i].content;
-      var categories = data[i].categories;
-      var date = data[i].date;
+                    data.forEach(function () {
+                        html = `<div>
+                                <h3>${title}</h3>
+                                <h5>${date}</h5>
+                                <p>${content}</p>
+                                <p>${categories}</p>
+                                </div>`
+                    })
+                    $("#posts").append(html);
+                }
+            }).fail(function (error) {
+            console.log("Error: " + error);
+        })
 
-      $("#posts").append("<div><p>" + title + "</p><p>" + content + "</p>" + "<p>" + categories + "<p>" + date + "</p>" + "</div>");
-    }
-  })
 
-
-})
-
+    })
 
 
 </script>

@@ -39,13 +39,18 @@
                 type: "GET",
                 dataType: "json"
             })
-                .done(function (data, status) {
-                    console.log(data);
+                .done(function (data) {
+                    // console.log(data);
+                    var html = "";
+                    $("#insertProducts").append(html);
                     for (let i = 0; i < data.length; i++) {
-                        console.log(data);
-                        $("#insertProducts").append("<tr><td>" + data[i].title + "</td><td>" + data[i].price + "</td>" + "<td>" + data[i].quantity + "</td>");
+                        html = ("<tr><td>" + data[i].title + "</td><td>" + data[i].price + "</td>" + "<td>" + data[i].quantity + "</td>");
+
+                        $("#insertProducts").append(html);
                     }
-                });
+                }).fail(function (error) {
+                    console.log("Error object: " + error);
+            })
         })
 
 
@@ -54,18 +59,18 @@
                 type: "GET",
                 dataType: "json"
             })
-                .done(function (data, status) {
+                .done(function (data) {
                     console.log(data);
+                    var html = "";
                     for (let i = 0; i < data.length; i++) {
+                        html = ("<tr><td>" + data[i].title + "</td><td>" + data[i].price + "</td>" + "<td>" + data[i].quantity + "</td><td>" + data[i].categories + "</td>");
                         console.log(data);
-                        $("#insertProducts").append("<tr><td>" + data[i].title + "</td><td>" + data[i].price + "</td>" + "<td>" + data[i].quantity + "</td>");
+                        $("#insertProducts").empty().append(html)
                     }
                 });
         }
-
-        $("#refresh_button").click(function() {
-            pullData();
-        });
+        setInterval(pullData, 3000)
+        $("#refresh_button").click(pullData());
 
     })();
 </script>
