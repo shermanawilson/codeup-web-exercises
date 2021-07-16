@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script src="./js/keys.js"></script>
+<script>
+  'use strict'
+
+  $(document).ready(function () {
+
+    $.get(`https://api.openweathermap.org/data/2.5/weather`, {
+      appid: `e70517c8a46dc67c044058b59cf52317`,
+      q:     "San Antonio, US",
+      units: `imperial` //temp is in f
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }) // end of document.ready
+</script>
+</body>
+</html>
