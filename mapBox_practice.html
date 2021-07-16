@@ -13,13 +13,7 @@
 <script src="./js/keys.js"></script>
 <script src="./js/mapbox-geocoder-utils.js"></script>
 <script>
-    mapboxgl.accessToken = mapboxAPIKey;
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
-        center: [-98.4916, 29.4252]
-    });
+   $.ajax()
 
     var marker = new mapboxgl.Marker({ draggable:true})
         .setLngLat([-98.45251678925071,29.567244316609294])

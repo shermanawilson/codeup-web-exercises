@@ -16,6 +16,7 @@
 
 
 
+
 <script src="./js/jquery-2.2.4.js"></script>
 <script src="./js/keys.js"></script>
 <script>
@@ -30,7 +31,35 @@
     });
 
 
+      $.ajax("data/blog.json", {
+          type: "GET",
+          dataType: "json"
+      })
+          .done(function (data) {
 
+              console.log(data);
+              for (let i = 0; i < data.length; i++) {
+
+                  console.log(data);
+                  var html = "";
+                  var title = data[i].title;
+                  var content = data[i].content;
+                  var categories = data[i].categories.join(", ");
+                  var date = data[i].date;
+
+                  data.forEach(function () {
+                      html = `<div>
+                                <h3>${title}</h3>
+                                <h5>${date}</h5>
+                                <p>${content}</p>
+                                <p>${categories}</p>
+                                </div>`
+                  })
+                  $("#posts").append(html);
+              }
+          }).fail(function (error) {
+          console.log("Error: " + error);
+      })
 
 
 
