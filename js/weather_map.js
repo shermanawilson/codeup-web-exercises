@@ -15,6 +15,7 @@ $(document).ready(function () {
             units: `imperial` //temp is in f
         }).done(function (data) {
             console.log(data);
+            $('#main-card-col').html("");
 
             data.daily.forEach(function (day, index) { // index is like i in for loop
                 if (index < 5) {
@@ -23,7 +24,7 @@ $(document).ready(function () {
                  <div class="col-6" id="main-card-col">
                      <div class="card" style="width: 18rem;">
                          <div class="card-header">
-                            ${new Date(day.dt * 1000)}
+                            ${new Date(day.dt * 1000).toDateString()}
                         </div>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item">${day.temp.morn} / ${day.temp.night} </li>
@@ -50,23 +51,24 @@ $(document).ready(function () {
             var placeMarker = new mapboxgl.Marker()
                 .setLngLat([long, lat])
                 .addTo(map);
+
         })
     }
 
-    function updatesInfo() {
-        // click function on button
-        //geocode user input , using that to set them as long and lat var's
-        // geocode user input, call on var
-        // call weather data, will do so but with new coordinates
-        var address = $("#userInput").val();
-        console.log(address)
-        geocode(address, mapboxAPIKey).then(function(result) {
-            console.log(result);
-            map.setCenter(result);
-            map.setZoom(17);
-
-        });
-    }
+    // function updatesInfo() {
+    //     // click function on button
+    //     //geocode user input , using that to set them as long and lat var's
+    //     // geocode user input, call on var
+    //     // call weather data, will do so but with new coordinates
+    //     var address = $("#userInput").val();
+    //     console.log(address)
+    //     geocode(address, mapboxAPIKey).then(function(result) {
+    //         console.log(result);
+    //         map.setCenter(result);
+    //         map.setZoom(17);
+    //
+    //     });
+    // }
 
     $('#find_button').click(function (e) {
         e.preventDefault();
@@ -74,10 +76,10 @@ $(document).ready(function () {
         console.log(address)
         geocode(address, mapboxAPIKey).then(function(result) {
             console.log(result);
-            map.setCenter(result);
-            map.setZoom(17);
-
+            long = result[0];
+            lat = result[1];
         });
+        weatherData();
     });
 
 
