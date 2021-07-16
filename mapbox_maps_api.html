@@ -40,27 +40,38 @@
    var map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
-      zoom: 15,
+      zoom: 10,
       center: [-98.491142, 29.424349]
     });
+
+  var nav = new mapboxgl.NavigationControl();
+  map.addControl(nav);
 
 
   var myFavoritePlaces = [{
     name:'Bill Millers',
     address: '1616 N Loop 1604 E, San Antonio, TX 78232',
-    price:'$$'
+    price:'$$',
+    favoriteDish: 'Brisket',
+    whyItsTheBest: 'It is only here in Texas'
   }, {
     name:'Red Lobster',
     address: '8210 I-H 35 North Walzem Windcrest, San Antonio, TX 78239',
-    price:'$$$'
+    price:'$$$',
+    favoriteDish: 'Shrimp',
+    whyItsTheBest: 'It is a classic place if you love sea food!'
   }, {
     name:'Outback Steakhouse',
     address: '12511 I-10, West, San Antonio, TX 78230',
-    price:'$$$'
+    price:'$$$',
+    favoriteDish: 'Salmon',
+    whyItsTheBest: 'They have great drinks, its affordable, and there is usually always one near by!'
   }, {
     name:'Big Boy Burgers',
     address: '9334 Potranco Rd, San Antonio, TX 78245',
-    price:'$'
+    price:'$',
+    favoriteDish: 'Burger',
+    whyItsTheBest: 'I have never been but I hear they have amazing burgers'
   }];
 
   myFavoritePlaces.forEach(function (place) {
@@ -74,7 +85,7 @@
       var placePopup = new mapboxgl.Popup()
               .setLngLat([-98.45251678925071,29.567244316609294])
 
-              .setHTML(`<p>${place.name} <br> ${place.address} <br> ${place.price}</p>`)
+              .setHTML(`<p>${place.name} <br> ${place.address} <br> ${place.price}  <br> ${place.favoriteDish}  <br> ${place.whyItsTheBest} </p>`)
               // .setMaxWidth("100px")
               // .addTo(map)
 
@@ -82,12 +93,6 @@
 
     })
   })
-
-
-
-
-
-
 
 
 </script>
