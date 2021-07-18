@@ -44,11 +44,11 @@ $(document).ready(function () {
             // on drag in , marker drag, drag to coordinates!!
             mapboxgl.accessToken = mapboxAPIKey
 
-
+            var coordinates = $('#map')
             map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
-                zoom: 15,
+                zoom: 9,
                 center: [long, lat]
             });
             var placeMarker = new mapboxgl.Marker({
@@ -61,11 +61,14 @@ $(document).ready(function () {
             function onDragEnd() {
                 // TBD
 
+                var lngLat = placeMarker.getLngLat();
+                // coordinates.style.display = 'block';
+                // coordinates.innerHTML =
+                //     'Longitude: ' + long + '<br />Latitude: ' + lat;
                 map.flyTo({
                     center: [long, lat],
                     essential: true // this animation is considered essential with respect to prefers-reduced-motion
-                });
-
+                })
             }
 
             placeMarker.on('dragend', onDragEnd())
