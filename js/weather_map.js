@@ -42,33 +42,27 @@ $(document).ready(function () {
 
             // on drag in , marker drag, drag to coordinates!!
             mapboxgl.accessToken = mapboxAPIKey
+
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
                 zoom: 18,
                 center: [long, lat]
             });
-            var placeMarker = new mapboxgl.Marker()
+            var placeMarker = new mapboxgl.Marker({
+                draggable: true,
+            })
                 .setLngLat([long, lat])
                 .addTo(map);
 
+
+            function onDragEnd() {
+                // TBD
+            }
+
+            placeMarker.on('dragend', onDragEnd())
         })
     }
-
-    // function updatesInfo() {
-    //     // click function on button
-    //     //geocode user input , using that to set them as long and lat var's
-    //     // geocode user input, call on var
-    //     // call weather data, will do so but with new coordinates
-    //     var address = $("#userInput").val();
-    //     console.log(address)
-    //     geocode(address, mapboxAPIKey).then(function(result) {
-    //         console.log(result);
-    //         map.setCenter(result);
-    //         map.setZoom(17);
-    //
-    //     });
-    // }
 
     $('#find_button').click(function (e) {
         e.preventDefault();
@@ -80,6 +74,7 @@ $(document).ready(function () {
             lat = result[1];
         });
         weatherData();
+
     });
 
 
