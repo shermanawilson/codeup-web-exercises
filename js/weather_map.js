@@ -50,7 +50,7 @@ $(document).ready(function () {
                 center: [long, lat]
             });
             var placeMarker = new mapboxgl.Marker({
-                draggable: true,
+                draggable: true
             })
                 .setLngLat([long, lat])
                 .addTo(map);
@@ -66,6 +66,12 @@ $(document).ready(function () {
 
     $('#find_button').click(function (e) {
         e.preventDefault();
+
+       var fly = new map.flyTo({
+            center: [long,lat],
+            essential: true // this animation is considered essential with respect to prefers-reduced-motion
+        });
+
         var address = $("#userInput").val();
         console.log(address)
         geocode(address, mapboxAPIKey).then(function(result) {
@@ -76,6 +82,16 @@ $(document).ready(function () {
         weatherData();
 
     });
+
+
+
+    // TODO: There should be an almost animation that when you press the button it zooms into the
+    // TODO: location location, when pressed to go somewhere else it zooms out of where you are and zooms
+    // TODO: into new location
+
+    // Step 1: Get the functionality to work for pulling new coordinates
+    // Step 2: Get it to zoom into location
+    // Step 3: Get it to zoom out from current location and zoom into new location
 
 
 }) // end of document.ready
