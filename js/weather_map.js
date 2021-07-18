@@ -3,6 +3,7 @@
 $(document).ready(function () {
 
     // variables here
+    var map;
     var lat = 29.424349 // when clicked , geocode what user's typed, in click function
     var long = -98.491142 // get coordinates, reset lat & long in click function then call weatherData
     weatherData();
@@ -38,15 +39,16 @@ $(document).ready(function () {
                     $('#main-card-col').append(weatherCard)
                 }
 
-            })
+            })  // end of for each loop
 
             // on drag in , marker drag, drag to coordinates!!
             mapboxgl.accessToken = mapboxAPIKey
 
-            var map = new mapboxgl.Map({
+
+            map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v11',
-                zoom: 18,
+                zoom: 15,
                 center: [long, lat]
             });
             var placeMarker = new mapboxgl.Marker({
@@ -58,20 +60,21 @@ $(document).ready(function () {
 
             function onDragEnd() {
                 // TBD
+
+                map.flyTo({
+                    center: [long, lat],
+                    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                });
+
             }
 
             placeMarker.on('dragend', onDragEnd())
-        })
+        }) // end of .done function
     }
+
 
     $('#find_button').click(function (e) {
         e.preventDefault();
-
-       var fly = new map.flyTo({
-            center: [long,lat],
-            essential: true // this animation is considered essential with respect to prefers-reduced-motion
-        });
-
         var address = $("#userInput").val();
         console.log(address)
         geocode(address, mapboxAPIKey).then(function(result) {
@@ -81,8 +84,7 @@ $(document).ready(function () {
         });
         weatherData();
 
-    });
-
+    }); // end of find button click function
 
 
     // TODO: There should be an almost animation that when you press the button it zooms into the
@@ -95,3 +97,7 @@ $(document).ready(function () {
 
 
 }) // end of document.ready
+
+
+
+
