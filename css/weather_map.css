@@ -1,6 +1,7 @@
-* {
+.container {
     margin: 0;
     padding: 0;
+    border: solid black 1px;
 }
 
 #nav_bar_items {
@@ -21,7 +22,6 @@
 
 .row {
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -45,3 +45,15 @@
 /*    flex-direction: row;*/
 /*}*/
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*#top_nav {*/
+/*    width: 75px;*/
+/*}*/
+
+* {
+    font-family: 'Shadows Into Light', cursive;
+}

@@ -15,35 +15,44 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <!-- Link to css style page -->
     <link rel="stylesheet" href="css/weather_map.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
 <body>
+<div class="container-fluid">
 
-<!--Nav Bar-->
-<div class="navbar m-0 p-0">
-    <div id="nav_bar_items">
-        <p>Weather Map</p>
-        <p id="current_city">Current Location: San Antonio</p>
+    <!--Nav Bar-->
+    <div class="navbar m-0 p-0" id="top_nav">
+        <div id="nav_bar_items">
+            <p>Weather Map</p>
+            <p id="current_city">Current Location: San Antonio</p>
+        </div>
+    </div>
+
+
+    <!--Find the Location Button-->
+
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+            Place <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                         id="userInput">
+            <button class="btn btn-primary" id="find_button" type="submit">Find</button>
+        </form>
+    </nav>
+
+    <!--Main Body-->
+
+    <div class="row" id="main-card-col">
+<!--        <div class="col-12" ></div>-->
+    </div>
+    <div class="row">
+        <div class="col" id="map_col">
+            <div id='map'></div>
+        </div>
     </div>
 </div>
-
-
-<!--Find the Location Button-->
-
-<nav class="navbar navbar-light bg-light">
-    <form class="form-inline">
-       Place <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="userInput">
-        <button class="btn btn-primary" id="find_button" type="submit">Find</button>
-    </form>
-</nav>
-
-<!--Main Body-->
-
-<div class="row">
-    <div class="col-6" id="main-card-col"></div> <br>
-    <div class="col-6" id="map_col">
-        <div id='map'></div>
-    </div>
-</div>
-
 
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
