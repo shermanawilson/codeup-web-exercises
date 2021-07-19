@@ -3,6 +3,8 @@
 $(document).ready(function () {
 
 
+
+
     var lat = 29.424349 // when clicked , geocode what user's typed, in click function
     var long = -98.491142 // get coordinates, reset lat & long in click function then call weatherData
 
@@ -12,7 +14,7 @@ $(document).ready(function () {
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
-        zoom: 20,
+        zoom: 15,
         center: [long, lat]
     });
    var placeMarker = new mapboxgl.Marker({
@@ -34,11 +36,13 @@ $(document).ready(function () {
             units: `imperial` //temp is in f
         }).done(function (data) {
             console.log(data);
+
             $('#main-card-col').html("");
 
             data.daily.forEach(function (day, index) { // index is like i in for loop
                 if (index < 5) {
                     console.log(day); // this is where i can take apart info for each day
+
                     var weatherCard = `
                  <div class="col-6" id="main-card-col">
                      <div class="card" style="width: 18rem;">
@@ -61,9 +65,28 @@ $(document).ready(function () {
         }) // end of .done function
     } // end of weatherData function
 
+
     function onDragEnd() {
      var lngLat = placeMarker.getLngLat()
         console.log(lngLat);
+
+
+        reverseGeocode(lngLat, mapboxAPIKey).then(function(result) {
+            console.log(result);
+            $('#current_city').html('Current Location: ' + result);
+            placeMarker
+                .setLngLat([long, lat])
+
+            map.flyTo({
+                center: [long, lat],
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            }) // end of map . flyTo
+        }); // end of reverse geocode
+
+
+
+
+     // this is where we need to try and display the location
         long = lngLat.lng;
         lat = lngLat.lat;
         weatherData();
@@ -77,6 +100,9 @@ $(document).ready(function () {
         var address = $("#userInput").val();
         var lngLat = placeMarker.getLngLat();
         console.log(address)
+
+        $('#current_city').html('Current Location: ' + address);
+
         geocode(address, mapboxAPIKey).then(function(result) {
             console.log(result);
             long = result[0];
