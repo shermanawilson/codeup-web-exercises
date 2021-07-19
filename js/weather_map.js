@@ -2,10 +2,28 @@
 
 $(document).ready(function () {
 
-    // variables here
-    var map;
+
     var lat = 29.424349 // when clicked , geocode what user's typed, in click function
     var long = -98.491142 // get coordinates, reset lat & long in click function then call weatherData
+
+    mapboxgl.accessToken = mapboxAPIKey
+
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        zoom: 20,
+        center: [long, lat]
+    });
+   var placeMarker = new mapboxgl.Marker({
+        draggable: true
+    })
+       placeMarker
+           .setLngLat([long, lat])
+           .addTo(map);
+   //for multiple, put ; on the last one.
+
+    // variables here
     weatherData();
 
     function weatherData() {
@@ -40,64 +58,40 @@ $(document).ready(function () {
                 }
 
             })  // end of for each loop
-
-            // on drag in , marker drag, drag to coordinates!!
-            mapboxgl.accessToken = mapboxAPIKey
-
-            var coordinates = $('#map')
-            map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                zoom: 9,
-                center: [long, lat]
-            });
-            var placeMarker = new mapboxgl.Marker({
-                draggable: true
-            })
-                .setLngLat([long, lat])
-                .addTo(map);
-
-
-            function onDragEnd() {
-                // TBD
-
-                var lngLat = placeMarker.getLngLat();
-                // coordinates.style.display = 'block';
-                // coordinates.innerHTML =
-                //     'Longitude: ' + long + '<br />Latitude: ' + lat;
-                map.flyTo({
-                    center: [long, lat],
-                    essential: true // this animation is considered essential with respect to prefers-reduced-motion
-                })
-            }
-
-            placeMarker.on('dragend', onDragEnd())
         }) // end of .done function
-    }
+    } // end of weatherData function
 
+    function onDragEnd() {
+     var lngLat = placeMarker.getLngLat()
+        console.log(lngLat);
+        long = lngLat.lng;
+        lat = lngLat.lat;
+        weatherData();
+    } // end of onDragEnd function
+
+// look up call back functions ***********
+    placeMarker.on('dragend', onDragEnd)
 
     $('#find_button').click(function (e) {
         e.preventDefault();
         var address = $("#userInput").val();
+        var lngLat = placeMarker.getLngLat();
         console.log(address)
         geocode(address, mapboxAPIKey).then(function(result) {
             console.log(result);
             long = result[0];
             lat = result[1];
-        });
+
+            placeMarker
+                .setLngLat([long, lat])
+
+            map.flyTo({
+                center: [long, lat],
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            }) // end of map . flyTo
+        }); // end of geocode function
         weatherData();
-
     }); // end of find button click function
-
-
-    // TODO: There should be an almost animation that when you press the button it zooms into the
-    // TODO: location location, when pressed to go somewhere else it zooms out of where you are and zooms
-    // TODO: into new location
-
-    // Step 1: Get the functionality to work for pulling new coordinates
-    // Step 2: Get it to zoom into location
-    // Step 3: Get it to zoom out from current location and zoom into new location
-
 
 }) // end of document.ready
 
