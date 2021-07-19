@@ -10,8 +10,8 @@
     width: 100%;
     justify-content: space-between;
     color: white;
-    background-color: blue;
-    border: solid black 1px;
+    background-color: rgba(244, 60, 255, 0.01);
+    /*border: solid black 1px;*/
 }
 
 #map {
@@ -23,6 +23,7 @@
 .row {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 #colOne {
@@ -35,6 +36,11 @@
 
 #main-card-col {
     display: flex;
+    border: solid lightblue 5px;
+}
+
+#map_col {
+    border: solid lightblue 5px;
 }
 /*#main-card-col {*/
 /*    border: solid lightgrey 1px;*/
@@ -48,6 +54,7 @@
 body {
     margin: 0;
     padding: 0;
+    justify-content: center;
 }
 
 /*#top_nav {*/
@@ -56,4 +63,15 @@ body {
 
 * {
     font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    color: #3B94D9;
+
+}
+
+#find_button {
+    background-color: pink;
+}
+
+.card:hover {
+    background-color: rgba(255, 105, 180, 0.07);
 }
