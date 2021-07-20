@@ -43,7 +43,7 @@ $(document).ready(function () {
                 if (index < 5) {
                     console.log(day); // this is where i can take apart info for each day
                     var weatherCard = `
-                     <div class="card col-2" style="width: 18rem;">
+                     <div class="card col-2" id="styleMe" style="width: 18rem;">
                          <div class="card-header">
                             ${new Date(day.dt * 1000).toDateString()}
                         </div>
