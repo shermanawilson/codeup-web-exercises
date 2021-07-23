@@ -48,9 +48,8 @@ const totalYears = users.reduce((experience, users) => experience + users.yearsO
 console.log(totalYears)
 console.log(totalYears / users.length);
 
-// let emailSplit = users.email.split(' ');
+
 const longestEmail = users.reduce((currentLongest, user) => {
-    // return Math.max(...user.split(' ').reduce(users => users.email.length));
     if(user.email.length > currentLongest.email.length) {
         return user;
     } else {
