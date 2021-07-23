@@ -56,4 +56,4 @@ const longestEmail = users.reduce((currentLongest, user) => {
         return currentLongest;
     }
 }, users[0])
-console.log(longestEmail);
+console.log(longestEmail.email);
