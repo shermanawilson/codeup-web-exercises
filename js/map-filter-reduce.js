@@ -71,18 +71,18 @@ console.log(nameString + `.`)
 
 // Bonus
 
-// const concatLangs = users.reduce((accumulator, user) => accumulator.concat(user.languages), [])
-// console.log(concatLangs)
-// // bucket array to put all the values
-//
-// const uniqueLangs = concatLangs.reduce((accumulator, currentValue) => {
-//     if(accumulator.indexOf(currentValue) === -1) {
-//         // this is to make sure the accumulator doesn't match the current value
-//         accumulator.push(currentValue);
-//     }
-//     return accumulator;
-// }, [])
-// console.log(uniqueLangs)
+const concatLangs = users.reduce((accumulator, user) => accumulator.concat(user.languages), [])
+console.log(concatLangs)
+// bucket array to put all the values
+
+const uniqueLangs = concatLangs.reduce((accumulator, currentValue) => {
+    if(accumulator.indexOf(currentValue) === -1) {
+        // this is to make sure the accumulator doesn't match the current value
+        accumulator.push(currentValue);
+    }
+    return accumulator;
+}, [])
+console.log(uniqueLangs)
 
 // A Different way
 
@@ -97,7 +97,7 @@ const uniqueLang = concatLang.reduce((accumulator, currentValue) => {
         accumulator.push(currentValue)
         return accumulator;
     }
-    //
 }, [])
 
 console.log(uniqueLang);
+

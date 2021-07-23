@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise Demo</title>
+</head>
+<body>
+
+
+<script src="./js/jquery-2.2.4.js"></script>
+<script src="js/keys.js"></script>
+<script src="js/promises.js"></script>
+<script>
+    `use strict`
+
+
+    // 1. call fetch and see asynchronous stuff
+    // fetch(`http://localhost:8080/timer/4`) // fetch returns after 4 seconds
+
+
+    //2. Work with response from fetch call
+    // fetch(`https://api.githubxxxx.com/users`)//Step 1: Make fetch call to github
+    //     .then((response) => {
+    //         let aPromise = response.json();//Step 2: grab json data from response
+    //         console.log(aPromise)
+    //         return aPromise;
+    //     }).then((jsonData) => console.log(jsonData))//Step 3: Do something with that json)
+    //     // promises have a built in function that reads through and produces as json
+    //     .catch((error) => {
+    //         console.log(`ERROR!`, error);
+    //         console.log(`since this sequence of code failed, we can do other things to respond to the error`, error)
+    //         return Promise.reject();
+    //     }).catch((error) => {
+    //         console.log(`catch 22`, error);
+    // })
+
+    // my function will return a promise
+    // function getUsersFromGithubAsJSON() {
+    //     return fetch(`https://api.github.com/users`)  //1. Make the fetch call to github
+    //         .then((response) => response.json()); //2. Return the json() promise
+    // }
+    //
+    // getUsersFromGithubAsJSON()
+    //     .then((userData) => {
+    //         for (const user of userData) {
+    //             console.log(user);
+    //         }
+    //     });
+    //
+    //
+    // // 5 Make a function that returns a new promise
+    // function makeNewPromise(promiseMessage) {
+    //     const newPromise = new Promise((resolve, reject) => {
+    //         return resolve(`Hey the promise created successfully: ` + promiseMessage);
+    //         //return reject(`So sad, broken promise`);
+    //     });
+    //     return newPromise
+    // }
+    //
+    // makeNewPromise("Oh my new promise")
+    //     .then((message) => console.log(message))
+    //     .catch((error) => console.log(`ERROR!`, error));
+    //
+    //
+    // console.log(`end of script`); // runs immediately after fetch started
+
+
+</script>
+</body>
+</html>
