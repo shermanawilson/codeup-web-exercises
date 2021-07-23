@@ -57,3 +57,47 @@ const longestEmail = users.reduce((currentLongest, user) => {
     }
 }, users[0])
 console.log(longestEmail.email);
+
+
+const nameString = users.reduce((accumulator, user) => {
+    if(accumulator === ``) {
+        return `Your Instructors Are: ` + user.name
+    } else {
+        return accumulator + `, ` + user.name;
+    }
+}, ``)
+console.log(nameString + `.`)
+
+
+// Bonus
+
+// const concatLangs = users.reduce((accumulator, user) => accumulator.concat(user.languages), [])
+// console.log(concatLangs)
+// // bucket array to put all the values
+//
+// const uniqueLangs = concatLangs.reduce((accumulator, currentValue) => {
+//     if(accumulator.indexOf(currentValue) === -1) {
+//         // this is to make sure the accumulator doesn't match the current value
+//         accumulator.push(currentValue);
+//     }
+//     return accumulator;
+// }, [])
+// console.log(uniqueLangs)
+
+// A Different way
+
+const concatLang = users.reduce((accumulator, user) => accumulator.concat(user.languages), [])
+console.log(concatLang)
+// concat will put all languages in a big array
+
+const uniqueLang = concatLang.reduce((accumulator, currentValue) => {
+    if(accumulator.includes(currentValue)) {
+        return accumulator;
+    } else {
+        accumulator.push(currentValue)
+        return accumulator;
+    }
+    //
+}, [])
+
+console.log(uniqueLang);
