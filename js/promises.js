@@ -10,7 +10,6 @@ function getUserInfo() {
 
 getUserInfo()
     .then((userData) => {
-        console.log(userData)
         let lastCommit = userData[0].created_at;
         console.log(lastCommit);
     })
